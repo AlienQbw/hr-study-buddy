@@ -7,6 +7,7 @@ import { Wrapper } from './Root.styles';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Form from 'components/organisms/Form/Form';
 import { users as usersData } from 'data/users';
+import Nav from 'components/organisms/Nav/Nav';
 
 const initialFormState = {
   name: '',
@@ -48,10 +49,7 @@ const Root = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Wrapper>
-          <nav>
-            <Link to="/">Home</Link>
-            <Link to="/add-user">Add user</Link>
-          </nav>
+          <Nav />
           <Switch>
             <Route path="/add-user">
               <Form formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange} />
