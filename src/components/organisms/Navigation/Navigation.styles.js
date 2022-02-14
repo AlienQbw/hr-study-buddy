@@ -35,8 +35,24 @@ export const StyledLink = styled(NavLink).attrs({ activeClassName })`
   color: ${({ theme }) => theme.colors.darkGrey};
   text-align: right;
   margin: 15px 20px 15px auto;
+  position: relative;
 
   &.${activeClassName} {
-    color: red;
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  &::after {
+    opacity: 0;
+    content: '';
+    transition: opacity 0.4s ease-in-out;
+    position: absolute;
+    width: 18px;
+    height: 3px;
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+    background-color: ${({ theme }) => theme.colors.darkGrey};
   }
 `;
