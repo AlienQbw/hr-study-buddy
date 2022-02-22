@@ -29,7 +29,6 @@ const reducer = (state, action) => {
 const AddUser = () => {
   const [formValues, dispatch] = useReducer(reducer, initialFormState);
   const { handleAddUser } = useContext(UsersContext);
-
   const handleInputChange = (e) => {
     dispatch({
       type: 'INPUT CHANGE',
